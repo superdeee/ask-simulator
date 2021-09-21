@@ -1,0 +1,26 @@
+#DEFINE 0x00 mem0.	; define mem address 0 (as hex) as name 'mem0'
+
+STI mem0, 0d1		; store 1 (as decimal) in memory at address of mem0
+
+LDI AX, 0x5307		; load constant into register A
+LDI CX, 0x31D0		; load constant into register C
+PUSH AX			; push A register onto the stack
+SUB AX, CX		; subtract C register value from A register content
+
+MOV AX, CX		; copy C register value to the A register
+POP AX			; pop stack item into the A register
+LDI DX, 0xDDDD		; load hex constant into register D
+
+INT 0x15 		; call interrupt no 15 - poweroff signal
+
+LDI DX, 0xACAB		; load another hex constant into register D
+INT 0x15			; call interrupt no 15 - cancel poweroff
+
+LD AX, mem0		; load value from memory into register A
+LDI DX, 0b00000000	; load consant (in bin) into register D
+LDI BX, 0x00		; load constant into register B
+
+LBL0:	ADD BL, DX	; add D value to B low register value, add line label 
+	SHL AX		; shift left A register
+	INC DX		; increment D register
+	JMP LBL0		; jump to label LBL0
