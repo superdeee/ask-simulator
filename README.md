@@ -51,7 +51,7 @@ INT,1,32,!$a
 
 ### Editor
 
-There has been label and user defined values handling defined, so as to enable the use of jump to label operations and easier memory usage. Syntax highlighting detects operation keywords, arguments differentiation(register/constant/variable), define statements, labels and code comments.
+There has been label and user defined values handling defined, so as to enable the use of jump to label operations and easier memory usage. Syntax highlighting detects operation keywords, arguments differentiation(register/constant/variable), define statements, labels and code comments. Through the app user can open and save pseudo-assembly code as <i>.asmp</i> files.
 
 ### Parser
 
